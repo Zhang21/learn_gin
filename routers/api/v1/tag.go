@@ -13,9 +13,15 @@ import (
 	"github.com/zhang21/learn_gin/pkg/util"
 )
 
-// GetTags gets tags of blog
+// GetTags gets tags of article
+// @Summary GetTags gets multiple article tags
+// @Version v1
+// @Produce json
+// @Param name query string false "Name"
+// @Param state query int false "State"
+// @Success 200 {string}  json "{"code":200,"data":{"lists":[{"id":3,"created_on":1516849721,"modified_on":0,"name":"3333","created_by":"4555","modified_by":"","state":0}],"total":29},"msg":"ok"}"}
+// @Router /api/v1/tags [get]
 func GetTags(c *gin.Context) {
-	// c.Query可用于获取?name=test&state=1这类URL参数
 	name := c.Query("name")
 
 	maps := make(map[string]interface{})
@@ -43,7 +49,15 @@ func GetTags(c *gin.Context) {
 	})
 }
 
-// AddTag adds tag for blog
+// AddTag adds tag for article
+// @Summary AddTag adds article tag
+// @Version v1
+// @Produce json
+// @Param name  query string true "Name"
+// @Param state query int false "State"
+// @Param created_by query int false "CreatedBy"
+// @Success 200 {string}  json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /api/v1/tags [post]
 func AddTag(c *gin.Context) {
 	name := c.Query("name")
 	// DefaultQuery支持设置一个默认值
@@ -75,6 +89,15 @@ func AddTag(c *gin.Context) {
 }
 
 // EditTag edits tag of blog
+// @Summary EditTag updates article tag
+// @Produce json
+// @Version v1
+// @Param id path int true "ID"
+// @Param name query string true "Name"
+// @Param state query int false "State"
+// @Param modified_by query string true "ModifiedBy"
+// @Success 200 {string}  json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /api/v1/tags/{id} [put]
 func EditTag(c *gin.Context) {
 	id := com.StrTo(c.Param("id")).MustInt()
 	name := c.Query("name")
@@ -120,6 +143,12 @@ func EditTag(c *gin.Context) {
 }
 
 // DeleteTag deletes tag of blog
+// @Summary DeleteTag deletes article tag
+// @Version v1
+// @Produce json
+// @Param id path int true "ID"
+// @Success 200 {string}  json "{"code":200,"data":{},"msg":"ok"}"
+// @Router /api/v1/tags/{id} [delete]
 func DeleteTag(c *gin.Context) {
 	id := com.StrTo(c.Param("id")).MustInt()
 

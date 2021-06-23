@@ -7,6 +7,12 @@ import (
 	"github.com/zhang21/learn_gin/pkg/setting"
 	"github.com/zhang21/learn_gin/routers/api"
 	v1 "github.com/zhang21/learn_gin/routers/api/v1"
+
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
+
+	// swagger init
+	_ "github.com/zhang21/learn_gin/docs"
 )
 
 // InitRouter initialize routers.
@@ -24,6 +30,9 @@ func InitRouter() *gin.Engine {
 	})
 
 	r.GET("/auth", api.GetAuth)
+
+	// swagger
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	apiv1 := r.Group("/api/v1")
 	// add auth to api
