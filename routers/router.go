@@ -3,7 +3,9 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 
+	"github.com/zhang21/learn_gin/middleware/jwt"
 	"github.com/zhang21/learn_gin/pkg/setting"
+	"github.com/zhang21/learn_gin/routers/api"
 	v1 "github.com/zhang21/learn_gin/routers/api/v1"
 )
 
@@ -21,7 +23,11 @@ func InitRouter() *gin.Engine {
 		})
 	})
 
+	r.GET("/auth", api.GetAuth)
+
 	apiv1 := r.Group("/api/v1")
+	// add auth to api
+	apiv1.Use(jwt.JWT())
 	{
 		// tags
 		apiv1.GET("/tags", v1.GetTags)
