@@ -1,7 +1,6 @@
 package api
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/astaxie/beego/validation"
@@ -9,6 +8,7 @@ import (
 
 	"github.com/zhang21/learn_gin/models"
 	"github.com/zhang21/learn_gin/pkg/e"
+	"github.com/zhang21/learn_gin/pkg/logging"
 	"github.com/zhang21/learn_gin/pkg/util"
 )
 
@@ -43,7 +43,7 @@ func GetAuth(c *gin.Context) {
 		}
 	} else {
 		for _, err := range valid.Errors {
-			log.Println(err.Key, err.Message)
+			logging.Info(err.Key, err.Message)
 		}
 	}
 
