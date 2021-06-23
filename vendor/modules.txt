@@ -1,5 +1,3 @@
-# github.com/OwnLocal/goes v1.0.0
-## explicit
 # github.com/astaxie/beego v1.12.3
 ## explicit
 github.com/astaxie/beego/logs
@@ -44,8 +42,6 @@ github.com/jinzhu/inflection
 # github.com/json-iterator/go v1.1.11
 ## explicit
 github.com/json-iterator/go
-# github.com/kr/pretty v0.1.0
-## explicit
 # github.com/leodido/go-urn v1.2.1
 ## explicit
 github.com/leodido/go-urn
@@ -53,18 +49,12 @@ github.com/leodido/go-urn
 ## explicit
 github.com/mattn/go-isatty
 # github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
-## explicit
 github.com/modern-go/concurrent
 # github.com/modern-go/reflect2 v1.0.1
-## explicit
 github.com/modern-go/reflect2
 # github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18
 ## explicit
 github.com/shiena/ansicolor
-# github.com/siddontang/go v0.0.0-20180604090527-bdc77568d726
-## explicit
-# github.com/siddontang/ledisdb v0.0.0-20181029004158-becf5f38d373
-## explicit
 # github.com/ugorji/go v1.2.6
 ## explicit
 # github.com/ugorji/go/codec v1.2.6
