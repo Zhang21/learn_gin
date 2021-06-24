@@ -28,3 +28,18 @@ learn  go gin web framework
 ├── runtime     // 运行时数据
 └── vendor      // 依赖
 ```
+
+
+<br>
+<br>
+
+
+## Docker
+
+```bash
+# 构建
+docker build -t zhang21/learn_gin .
+
+# 运行
+docker run -dit --name=learn_gin -p 8000:8000 zhang21/learn_gin
+```
